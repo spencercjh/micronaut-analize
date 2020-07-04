@@ -23,34 +23,38 @@ dependencies {
     annotationProcessor(platform("io.micronaut:micronaut-bom:$micronautVersion"))
     annotationProcessor("io.micronaut:micronaut-inject-java")
     annotationProcessor("io.micronaut:micronaut-validation")
-    annotationProcessor("io.micronaut.data:micronaut-data-processor")
+    annotationProcessor("io.micronaut.data:micronaut-data-processor:1.1.1")
     implementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
     implementation("io.micronaut:micronaut-inject")
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-runtime")
     implementation("javax.annotation:javax.annotation-api")
     implementation("io.micronaut:micronaut-http-server-netty")
-    implementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut.flyway:micronaut-flyway")
-    runtime("io.micronaut.sql:micronaut-jdbc-hikari")
-    implementation("io.micronaut.data:micronaut-data-jdbc")
-    implementation("io.micronaut.sql:micronaut-jooq")
-    implementation("io.micronaut:micronaut-spring:2.0.1")
-    runtimeOnly("ch.qos.logback:logback-classic")
-    runtimeOnly("mysql:mysql-connector-java")
+    implementation("io.micronaut.data:micronaut-data-jdbc:1.1.1")
+    implementation("io.micronaut.configuration:micronaut-jooq:2.2.6")
+    runtime("io.micronaut.configuration:micronaut-jdbc-hikari:2.2.6")
+    runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
+    runtimeOnly("mysql:mysql-connector-java:8.0.20")
+
     implementation(files('libs/inceptioapis.libs-0.0.1-SNAPSHOT.jar'))
+    implementation("org.springframework:spring-tx")
     implementation group: 'com.google.protobuf', name: 'protobuf-java', version: "3.12.2"
     implementation group: 'com.google.protobuf', name: 'protobuf-java-util', version: "3.12.2"
+
     testCompileOnly 'org.projectlombok:lombok:1.18.12'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
     testAnnotationProcessor(platform("io.micronaut:micronaut-bom:$micronautVersion"))
     testAnnotationProcessor("io.micronaut:micronaut-inject-java")
+    testAnnotationProcessor("io.micronaut.data:micronaut-data-processor:1.1.1")
     testImplementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+    testImplementation("io.micronaut.configuration:micronaut-flyway:1.2.0")
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testImplementation("io.micronaut.test:micronaut-test-junit5")
-    testImplementation("org.junit.jupiter:junit-jupiter-params")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation(platform("org.testcontainers:testcontainers-bom:1.14.3"))
+    testImplementation("org.junit.jupiter:junit-jupiter-params")
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.3.3'
+    testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.3.3'
     testRuntimeOnly("org.testcontainers:mysql")
 }
 

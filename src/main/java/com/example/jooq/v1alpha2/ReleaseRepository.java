@@ -4,10 +4,10 @@ import ai.inceptio.chariot.v1alpha2.resources.Release;
 import ai.inceptio.chariot.v1alpha2.resources.ReleaseDetail;
 import ai.inceptio.chariot.v1alpha2.resources.ReleaseType;
 import com.example.jooq.PagedList;
+import com.example.jooq.PersistenceException;
 import lombok.Builder;
 import lombok.Getter;
 
-import javax.persistence.PersistenceException;
 
 /**
  * The interface Release repository.
@@ -38,7 +38,7 @@ public interface ReleaseRepository {
    * @param toUpdate release to update
    * @return updated release
    */
-  ReleaseDetail update(ReleaseDetail toUpdate) throws PersistenceException;
+  ReleaseDetail update(ReleaseDetail toUpdate) throws PersistenceException, PersistenceException;
 
   /**
    * Query paged list.

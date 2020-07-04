@@ -1,0 +1,6 @@
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:chariot-test}
+    username: root
+    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver

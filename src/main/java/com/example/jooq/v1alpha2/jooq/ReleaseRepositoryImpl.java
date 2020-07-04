@@ -4,6 +4,7 @@ import ai.inceptio.chariot.v1alpha2.resources.Release;
 import ai.inceptio.chariot.v1alpha2.resources.ReleaseDetail;
 import ai.inceptio.chariot.v1alpha2.resources.ReleaseType;
 import com.example.jooq.PagedList;
+import com.example.jooq.PersistenceException;
 import com.example.jooq.v1alpha2.ReleaseRepository;
 import com.example.jooq.v1alpha2.jooq.mappers.ReleaseDetailRecordMapper;
 import com.example.jooq.v1alpha2.jooq.mappers.ReleaseRecordMapper;
@@ -17,7 +18,6 @@ import org.jooq.SortOrder;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import javax.persistence.PersistenceException;
 import java.util.ArrayList;
 import java.util.List;
 
